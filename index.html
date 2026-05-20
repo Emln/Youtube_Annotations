@@ -20,12 +20,18 @@
       <div class="row text-center">
         <h1>YouTube Annotater</h1>
       </div>
-      <div class="row mt-5">
-        <div id="ytplayer" class="col-8"></div>
-        <div id="sidebar-annotations" class="col-4 mt-3"></div>
+      <div class="row mt-5 align-items-stretch">
+        <div class="col-lg-8 col-12">
+          <div class="video-wrapper">
+            <div id="ytplayer"></div>
+          </div>
+        </div>
+        <div
+          id="sidebar-annotations"
+          class="col-lg-4 col-12 mt-3 mt-lg-0 overflow-auto"
+        ></div>
       </div>
       <div class="row mt-4">
-        <p id="current-time" class="text-center">Timecode: 00:00</p>
         <textarea
           id="annotation-input"
           class="form-control mt-3"
