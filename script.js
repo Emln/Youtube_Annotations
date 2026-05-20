@@ -3,9 +3,6 @@ var tag = document.createElement("script");
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName("script")[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-// Replace the 'ytplayer' element with an <iframe> and
-// YouTube player after the API code downloads.
 var player;
 function onYouTubePlayerAPIReady() {
   player = new YT.Player("ytplayer", {
@@ -32,12 +29,20 @@ function onPlayerReady(event) {
     document.getElementById("current-time").textContent =
       "Timecode: " + timecode;
 
-    sidebarAnnotation(timecode);
+    const text = document.getElementById("annotation-input").value;
+    sidebarAnnotation(timecode, text);
     console.log("Timecode: " + timecode);
   });
 }
 
-function sidebarAnnotation(timecode) {
+function sidebarAnnotation(timecode, text) {
   const sidebar = document.getElementById("sidebar-annotations");
-  sidebar.innerHTML += `<div class="annotation">Annotation at ${timecode}</div>`;
+  sidebar.innerHTML += `<div class="annotation">${timecode}: ${text} <button class="delete-btn btn btn-danger">X</button></div>`;
+
+  const deleteButtons = sidebar.querySelectorAll(".delete-btn");
+  deleteButtons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      this.parentElement.remove();
+    });
+  });
 }
