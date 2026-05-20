@@ -20,14 +20,24 @@ function onYouTubePlayerAPIReady() {
 
 function onPlayerReady(event) {
   const button = document.getElementById("get-time");
-
-  // Hier passiert die Magie, wenn man auf den Button klickt
   button.addEventListener("click", function () {
-    // player.getCurrentTime() ist der magische Befehl von YouTube
-    // Math.floor() rundet die Zahl ab, damit wir keine krummen Millisekunden haben
-    const aktuelleSekunde = Math.floor(player.getCurrentTime());
+    const timeSeconds = Math.floor(player.getCurrentTime());
+    const minutes = Math.floor(timeSeconds / 60);
+    const seconds = timeSeconds % 60;
+    const timecode =
+      minutes.toString().padStart(2, "0") +
+      ":" +
+      seconds.toString().padStart(2, "0");
 
-    // Text auf der Website aktualisieren
-    console.log("Aktuelle Sekunde: " + aktuelleSekunde + "s");
+    document.getElementById("current-time").textContent =
+      "Timecode: " + timecode;
+
+    sidebarAnnotation(timecode);
+    console.log("Timecode: " + timecode);
   });
+}
+
+function sidebarAnnotation(timecode) {
+  const sidebar = document.getElementById("sidebar-annotations");
+  sidebar.innerHTML += `<div class="annotation">Annotation at ${timecode}</div>`;
 }

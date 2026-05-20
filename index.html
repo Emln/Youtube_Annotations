@@ -6,10 +6,34 @@
     <title>YouTube Annotater</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <div id="ytplayer"></div>
+    <div class="container d-flex flex-column align-items-center mt-5">
+      <div class="row">
+        <h1>YouTube Annotater</h1>
+      </div>
+      <div class="row">
+        <div id="ytplayer" class="col-10"></div>
+        <div id="sidebar-annotations" class="col-2 mt-3"></div>
+      </div>
+      <div class="row">
+        <p id="current-time">Timecode: 00:00</p>
+        <button type="button" id="get-time" class="btn btn-primary mt-3">
+          Get Time
+        </button>
+      </div>
+    </div>
 
-    <button id="get-time">Get Time</button>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
