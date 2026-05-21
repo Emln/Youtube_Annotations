@@ -25,7 +25,6 @@
   height: calc(100vh - 500px);
   overflow-y: auto;
 }
-
-#video-input-container {
-  display: none;
+.annotation {
+  cursor: pointer;
 }

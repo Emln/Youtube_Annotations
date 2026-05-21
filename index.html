@@ -14,12 +14,17 @@
     />
   </head>
   <body>
+    <!--Navigation bar at the top-->
     <div class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">YouTube Annotater</a>
       </div>
     </div>
+
+    <!--Main container for the video player and annotations-->
     <div class="container-fluid d-flex flex-column vh-100 w-75">
+      <!--Row containing the video input and the video player with annotations-->
+      <!--Sidebar-->
       <div class="row mt-5 align-items-stretch bg-light rounded p-3">
         <div class="col-lg-8 col-12 d-flex flex-column justify-content-center">
           <div
@@ -39,11 +44,7 @@
           <div class="video-wrapper">
             <div id="ytplayer"></div>
           </div>
-          <button
-            id="newVideo"
-            class="btn btn-primary mt-2 d-none"
-            onClick="newVideo()"
-          >
+          <button id="newVideo" class="btn btn-primary mt-2 d-none">
             New Video
           </button>
         </div>
@@ -52,6 +53,8 @@
           class="col-lg-4 col-12 mt-3 mt-lg-0 overflow-auto"
         ></div>
       </div>
+
+      <!--Annotation input area below the video player-->
       <div class="row mt-4">
         <textarea
           id="annotation-input"
@@ -64,6 +67,9 @@
       </div>
     </div>
 
+    <footer class="bg-dark text-white text-center py-3">
+      <p>&copy; 2026 Emiliano Bott</p>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
