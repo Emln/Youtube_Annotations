@@ -14,17 +14,38 @@
     />
   </head>
   <body>
-    <div
-      class="container-fluid d-flex flex-column justify-content-center vh-100 w-75"
-    >
-      <div class="row text-center">
-        <h1>YouTube Annotater</h1>
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">YouTube Annotater</a>
       </div>
-      <div class="row mt-5 align-items-stretch">
-        <div class="col-lg-8 col-12">
+    </div>
+    <div class="container-fluid d-flex flex-column vh-100 w-75">
+      <div class="row mt-5 align-items-stretch bg-light rounded p-3">
+        <div class="col-lg-8 col-12 d-flex flex-column justify-content-center">
+          <div
+            id="video-input-container"
+            class="p-3 bg-white rounded justify-content-center align-items-center d-flex flex-column"
+          >
+            <input
+              type="text"
+              id="video-url"
+              class="form-control"
+              placeholder="Enter YouTube URL"
+            />
+            <button type="button" id="load-video" class="btn btn-primary mt-2">
+              Load Video
+            </button>
+          </div>
           <div class="video-wrapper">
             <div id="ytplayer"></div>
           </div>
+          <button
+            id="newVideo"
+            class="btn btn-primary mt-2 d-none"
+            onClick="newVideo()"
+          >
+            New Video
+          </button>
         </div>
         <div
           id="sidebar-annotations"

@@ -3,6 +3,7 @@
   width: 100%;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
   overflow: hidden;
+  display: none;
 }
 
 #ytplayer {
@@ -23,4 +24,8 @@
   max-height: calc(100vh - 500px);
   height: calc(100vh - 500px);
   overflow-y: auto;
+}
+
+#video-input-container {
+  display: none;
 }
